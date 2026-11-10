@@ -1,1 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JobTracker V2</title>
 
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    ◈
+  </div>
+
+  <div>
+    <h1>JobTracker V2</h1>
+    <p>Suivi professionnel des candidatures</p>
+  </div>
+
+</header>
+
+<main class="container">
+
+  <section class="stats">
+
+    <div class="stat-card">
+      <span>Total</span>
+      <strong id="total">0</strong>
+    </div>
+
+    <div class="stat-card">
+      <span>Entretiens</span>
+      <strong id="entretiens">0</strong>
+    </div>
+
+    <div class="stat-card">
+      <span>Offres</span>
+      <strong id="offres">0</strong>
+    </div>
+
+    <div class="stat-card">
+      <span>Taux</span>
+      <strong id="taux">0%</strong>
+    </div>
+
+  </section>
+
+  <section class="form-panel">
+
+    <input
+      id="company"
+      placeholder="Entreprise">
+
+    <input
+      id="position"
+      placeholder="Poste">
+
+    <select id="priority">
+
+      <option value="Faible">
+        🟢 Faible
+      </option>
+
+      <option value="Moyenne" selected>
+        🟡 Moyenne
+      </option>
+
+      <option value="Haute">
+        🔴 Haute
+      </option>
+
+    </select>
+
+    <input
+      id="salary"
+      placeholder="Salaire">
+
+    <input
+      id="recruiter"
+      placeholder="Recruteur">
+
+    <input
+      id="email"
+      placeholder="Email">
+
+    <input
+      type="date"
+      id="followup">
+
+    <textarea
+      id="notes"
+      placeholder="Notes d'entretien"></textarea>
+
+    <button
+      class="btn-primary"
+      onclick="addCandidate()">
+
+      Ajouter la candidature
+
+    </button>
+
+  </section>
+
+  <section class="actions">
+
+    <button
+      class="btn-secondary"
+      onclick="exportData()">
+
+      Export JSON
+
+    </button>
+
+    <label class="btn-secondary">
+
+      Import JSON
+
+      <input
+        id="importFile"
+        type="file"
+        accept=".json"
+        hidden>
+
+    </label>
+
+  </section>
+
+  <section class="board">
+
+    <div class="column">
+
+      <h2>📄 À envoyer</h2>
+
+      <div id="col0"></div>
+
+    </div>
+
+    <div class="column">
+
+      <h2>📨 Envoyée</h2>
+
+      <div id="col1"></div>
+
+    </div>
+
+    <div class="column">
+
+      <h2>🎙 Entretien</h2>
+
+      <div id="col2"></div>
+
+    </div>
+
+    <div class="column">
+
+      <h2>✅ Offre</h2>
+
+      <div id="col3"></div>
+
+    </div>
+
+    <div class="column">
+
+      <h2>❌ Refus</h2>
+
+      <div id="col4"></div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
